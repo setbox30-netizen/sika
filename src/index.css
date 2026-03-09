@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #059669;
+  --color-primary-dark: #064e3b;
+  --color-primary-light: #10b981;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .card-modern {
+    @apply bg-white rounded-[20px] shadow-sm border border-slate-100 p-6 transition-all duration-300 hover:shadow-md;
+  }
+  
+  .stat-card {
+    @apply rounded-[20px] p-6 text-white relative overflow-hidden shadow-lg;
+  }
+  
+  .nav-link-sidebar {
+    @apply flex items-center gap-4 px-6 py-3.5 text-slate-300 font-semibold transition-all duration-300 rounded-r-full mr-5 hover:bg-white/10 hover:text-white;
+  }
+  
+  .nav-link-sidebar.active {
+    @apply bg-white/15 text-white;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+  padding-left: 100%;
+}
